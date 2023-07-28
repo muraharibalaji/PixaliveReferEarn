@@ -27,11 +27,23 @@ const verify= async (req,res)=>{
           };
           request(options, function (error, response) {
             if (error) throw new Error(error);
-            //  console.log(response.body);
-            res.send(response.body);
-            // if(error){res.send('otp verified')}
-            // else{res.send("otp miss match")}
-          })
+             console.log(response.body);
+            })
+           
+            const tokenData ={
+                number:Mobilenumber,
+                // OTP:otp
+
+              
+             }
+            const t = await userservice.generatetoken(tokenData,'secretkey');
+            res.status(200).json({
+                status:true,
+                OTP:otp,
+                token:t
+             })
+            
+         
         }
     catch(err){
         console.log(err);}

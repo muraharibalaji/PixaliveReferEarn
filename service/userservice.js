@@ -32,15 +32,7 @@ static async generatetoken(tokendata,key)
         console.log(err);
     }
 } 
-// // Required libraries
-// const crypto = require('crypto');
 
-// // Function to generate a random OTP
-// function generateOTP() {
-//   return Math.floor(100000 + Math.random() * 900000).toString(); // Generates a 6-digit OTP
-// }
-
-// // Function to start the OTP timer
 // function startOTPTimer() {
 //   const otp = generateOTP();
 //   const otpExpirySeconds = 60; // OTP expires in 60 seconds
@@ -69,12 +61,7 @@ static async generatetoken(tokendata,key)
 //   }, otpExpirySeconds * 1000);
 // }
 
-// // Example usage
-// startOTPTimer();
 
-// const a=setInterval(() => {
-//     //     console.log("tea break");  
-//     // }, 1000);
 
 
     }

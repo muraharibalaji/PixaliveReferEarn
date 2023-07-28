@@ -3,8 +3,7 @@ class lgservice{
 static async login(Mobilenumber) {
 
     try {
-        // var {Mobilenumber} = req.body
-         //check phone number in database..
+        
        const no=await userservice.checkuser(Mobilenumber);
         if(!no){throw new Error("NUMBER NOT REGISTER")}
         else{
