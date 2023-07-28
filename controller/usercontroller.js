@@ -1,12 +1,12 @@
 const userservice = require('../service/userservice');
-const lgservice = require('../controller/ctrl');
+const lgservice = require('../service/ser');
 const request = require('request');
 const register =async(req,res)=>{
     try{
     let {Mobilenumber,Fullname,Email,ReferralCode}=req.body;
-         userservice.registeruser(Mobilenumber,Fullname,Email,ReferralCode)
-        const sam =  await  lgservice.login(Mobilenumber)
-        res.json(sam)
+         const user = await userservice.registeruser(Mobilenumber,Fullname,Email,ReferralCode)
+         lgservice.login(Mobilenumber)
+        res.json(user)
     }
 
     catch(err)
@@ -18,7 +18,6 @@ const verify= async (req,res)=>{
     try{
         var {Mobilenumber,otp}=req.body;  
         var url='https://2factor.in/API/V1/501acb1d-2ac0-11ee-addf-0200cd936042/SMS/VERIFY3/'+Mobilenumber+'/'+otp  
-        //console.log(url);
         
         var options = {
 

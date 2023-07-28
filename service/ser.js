@@ -1,7 +1,5 @@
-const userservice = require('../service/userservice');
+const userservice = require('./userservice');
 class lgservice{
-
-
 static async login(Mobilenumber) {
 
     try {
@@ -19,21 +17,10 @@ var options = {
 };
 request(options, function (error, response) {
   if (error) throw new Error(error);
-//   console.log(response.body);
-    return response.body;
+  console.log(response.body);
+   ;
 });
 
-//res.setHeader('Content-Type', 'application/json');
-//         let tokenData = {
-//             status:true,
-//             Number:Mobilenumber
-//          }
-
-//         const token = await userservice.generatetoken(tokenData, 'secretkey');
-//         res.json({
-//             status: true,
-//             token: token
-//         })
     }
 }
     catch(err) {
